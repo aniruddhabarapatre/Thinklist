@@ -858,3 +858,241 @@ ActionView::MissingTemplate (Missing template categories/show, application/show 
 
 
   Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-15 21:03:01 -0400
+Processing by ListingsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (2.2ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"   ORDER BY name ASC
+Completed 200 OK in 475ms (Views: 471.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:02 -0400
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:03 -0400
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:03 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:03 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:03 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-15 21:03:03 -0400
+
+
+Started GET "/assets/thinkful.png" for 127.0.0.1 at 2015-07-15 21:03:03 -0400
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2015-07-15 21:06:49 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (52.7ms)
+Completed 500 Internal Server Error in 71ms
+
+ActionView::Template::Error (undefined local variable or method `category' for #<#<Class:0x007fc7cd0f2610>:0x007fc7cc996128>):
+    1: <h1><%= category.name %></h1>
+    2: 
+    3: <%= render partial: 'list', locals: { listings: @listings } %>
+  app/views/categories/show.html.erb:1:in `_app_views_categories_show_html_erb__2602957476248131287_70248053909100'
+
+
+  Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (89.5ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2015-07-15 21:06:49 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (24.3ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (undefined local variable or method `category' for #<#<Class:0x007fc7cd0f2610>:0x007fc7cc8d7480>):
+    1: <h1><%= category.name %></h1>
+    2: 
+    3: <%= render partial: 'list', locals: { listings: @listings } %>
+  app/views/categories/show.html.erb:1:in `_app_views_categories_show_html_erb__2602957476248131287_70248053517280'
+
+
+  Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (84.9ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2015-07-15 21:06:56 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (1.2ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (26.0ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (undefined local variable or method `category' for #<#<Class:0x007fc7cd0f2610>:0x007fc7c9ef15f8>):
+    1: <h1><%= category.name %></h1>
+    2: 
+    3: <%= render partial: 'listings/list', locals: { listings: @category.listings } %>
+  app/views/categories/show.html.erb:1:in `_app_views_categories_show_html_erb__2602957476248131287_70248031542980'
+
+
+  Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (84.4ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2015-07-15 21:07:23 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.3ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered listings/_list.html.erb (3.9ms)
+  Rendered categories/show.html.erb within layouts/application (44.0ms)
+Completed 500 Internal Server Error in 54ms
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    1: <% if @listings.empty? %>
+    2:   No listings to display! Go <%= link_to 'create one', new_listing_path %>.
+    3: <% else %>
+    4:   <table class="table table-striped">
+  app/views/listings/_list.html.erb:1:in `_app_views_listings__list_html_erb__2446537141792663593_70248033959960'
+  app/views/categories/show.html.erb:3:in `_app_views_categories_show_html_erb__2602957476248131287_70248034847160'
+
+
+  Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/aniruddhabarapatre1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (97.6ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2015-07-15 21:08:38 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mListing Exists (0.4ms)[0m  SELECT  1 AS one FROM "listings"  WHERE "listings"."category_id" = ? LIMIT 1  [["category_id", 1]]
+  Rendered listings/_list.html.erb (28.1ms)
+  Rendered categories/show.html.erb within layouts/application (32.2ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"   ORDER BY name ASC[0m
+Completed 200 OK in 188ms (Views: 185.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:38 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/assets/thinkful.png" for 127.0.0.1 at 2015-07-15 21:08:39 -0400
+
+
+Started GET "/listings/new" for 127.0.0.1 at 2015-07-15 21:12:35 -0400
+Processing by ListingsController#new as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered listings/_form.html.erb (47.3ms)
+  Rendered listings/new.html.erb within layouts/application (52.1ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"   ORDER BY name ASC[0m
+Completed 200 OK in 209ms (Views: 206.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2015-07-15 21:12:47 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mListing Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "listings"  WHERE "listings"."category_id" = ? LIMIT 1[0m  [["category_id", 1]]
+  Rendered listings/_list.html.erb (2.4ms)
+  Rendered categories/show.html.erb within layouts/application (8.1ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"   ORDER BY name ASC
+Completed 200 OK in 159ms (Views: 156.3ms | ActiveRecord: 0.6ms)
